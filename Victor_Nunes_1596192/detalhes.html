@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NoirStream.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">  
+</head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <header style="background-color: black;">
+        <h1 style="text-align: center;color: aliceblue; background-color: black;">NoirStream</h1>
+        <nav class="navbar navbar-expand-lg " style="background-color: black; color:aliceblue">
+            <div class="container-fluid " >
+              <a class="navbar-brand" href="index.html"style="color:white">NoirStream</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#carouselExample6" style="color:#B22222">Recomendados</a>
+                  </li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="ms-auto d-flex align-items-center">
+                  <a href="suporte.html" class="nav-link d-flex flex-column align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                      class="bi bi-person-circle" viewBox="0 0 16 16">
+                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                      <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 
+                        4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                  </svg><small>Perfil</small>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+   
+    <div class="card" style="width: 80%; height: 40%;margin-left: 10%; margin: 8%; background-color: #2C2C2C;">
+        <img src="img/filmes.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="color: white;">NoirStream</h5>
+          <p class="card-text" style="color: white;">Descubra agora por que este filme está conquistando o mundo — clique e mergulhe nessa aventura imperdível!</p>
+          <a href="suporte.html" class="btn btn-danger">ASSISTIR</a>
+        </div>
+      </div>
+
+      <div id="detalhes-filme" class="detalhes"></div>
+
+      <script>
+        const filme = JSON.parse(localStorage.getItem("filmeSelecionado"));
+        const container = document.getElementById("detalhes-filme");
+    
+        if (filme) {
+          container.innerHTML = `
+            <img src="img/filmes.jpeg" alt="${filme.titulo}">
+            <h1>${filme.titulo}</h1>
+            <p><strong>Gênero:</strong> ${filme.genero}</p>
+            <p><strong>Duração:</strong> ${filme.duracao}</p>
+            <p><strong>Descrição:</strong> ${filme.descricao}</p>
+            <button onclick="window.history.back()">Voltar</button>
+          `;
+        } else {
+          container.innerHTML = "<p>Filme não encontrado.</p>";
+        }
+      </script>
+
+      <h3>Recomendados</h3>
+      <div id="carouselExample6" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex justify-content-center">
+              <div style="width: 25%; text-align: center; margin: 0 1%;">
+                <img src="img/ritmofuga.jpg" style="width: 100%; height: 250px;" alt="...">
+                <p><a href="suporte.html">Em ritmo de fuga</a></p>
+              </div>
+              <div style="width: 25%; text-align: center;margin: 0 1%;">
+                <img src="img/jumanji.jpg" style="width: 100%; height: 250px;" alt="...">
+                <p><a href="suporte.html">Jumanji</a></p>
+              </div>
+              <div style="width: 25%; text-align: center;margin: 0 1%;">
+                <img src="img/norbit.jpg" style="width: 100%; height: 250px;" alt="...">
+                <p><a href="suporte.html">Norbit</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <div style="width: 25%; text-align: center; margin: 0 1%;">
+                <img src="img/ted2.jpg" style="width: 100%; height: 250px;" alt="...">
+                <p><a href="suporte.html">Ted 2</a></p>
+              </div>
+              <div style="width: 25%; text-align: center;margin: 0 1%; ">
+                <img src="img/scarface2.jpeg" style="width: 100%; height: 250px;" alt="...">
+                <p><a href="suporte.html">Scarface</a></p>
+              </div>
+              <div style="width: 25%; text-align: center;margin: 0 1%;">
+                <img src="img/sherk.jpg" style="width: 100%; height: 250px;" alt="...">
+                <p><a href="suporte.html">Sherk</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center">
+              <div style="width: 25%; text-align: center; margin: 0 1%;">
+                <img src="img/kingkong.jpg" style="width: 100%; height: 250px;" alt="...">
+                <p><a href="suporte.html">King Kong</a></p>
+              </div>
+              <div style="width: 25%; text-align: center;margin: 0 1%;">
+                <img src="img/invincible.jpg" style="width: 100%; height: 250px;" alt="...">
+                <p><a href="suporte.html">Invencivel</a></p>
+              </div>
+              <div style="width: 25%; text-align: center;margin: 0 1%; ">
+                <img  src="img/venom.jpg" style="width: 100%; height: 250px;" alt="...">
+                <p><a href="suporte.html">Venom</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample6" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample6" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <footer class="footer">
+        <nav style="background-color: #2C2C2C">
+              <div style="text-align: center;">
+                <a href="#" alt="NoirStream" style="text-decoration: none;">
+                  <p style="font-size: 30px; margin: 0; color:white;">NoirStream</p>
+                </a>
+              </div>
+        </nav>
+      
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="suporte.html">Assinar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="suporte.html">Entrar</a>
+          </li>
+        </ul>
+      
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="suporte.html">Sobre</a>
+          </li>
+          <li >
+            <a class="nav-link" href="suporte.html">Política de Privacidade</a>
+          </li>
+        </ul>
+      
+        <div class="text-center mt-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16" style="color:white">
+            <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+            <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.4 5.4 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2z"/>
+          </svg>
+          <p class="nome" style="color:rgb(255, 126, 126);font-size: 20px; font-family: Arial, Helvetica, sans-serif;">Criador:</p>
+          <p class="nome" style="color:aliceblue;font-size: 18px;">Victor Eduardo Fernandes Nunes</p>
+          <p class="curso" style="color:aliceblue; font-size: 18px;">PUC Minas - São Gabriel</p>
+          <p class="curso" style="color:aliceblue; font-size: 18px;">Curso: Análise e Desenvolvimento de Sistemas</p>
+          <p class="turno" style="color:aliceblue; font-size: 18px;">Turno: Manhã</p>
+        </div>
+      </footer>
+
+
+</body>
+</html>
